@@ -31,15 +31,12 @@
  * @returns {{ season: string, activity: string } | null}
  */
 export function getSeasonActivity(month, temperature) {
-  // invalid month
   if (!Number.isInteger(month) || month < 1 || month > 12) {
     return null;
   }
 
-  let season;
-  let activity;
+  let season, activity;
 
-  // Step 1: determine season
   if (month === 12 || month === 1 || month === 2) {
     season = "Winter";
     activity = temperature < 0 ? "skiing" : "ice skating";
@@ -54,8 +51,5 @@ export function getSeasonActivity(month, temperature) {
     activity = temperature > 15 ? "nature walk" : "reading at a cafe";
   }
 
-  return {
-    season,
-    activity,
-  };
+  return { season, activity };
 }
