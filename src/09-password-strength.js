@@ -28,37 +28,36 @@
 export function checkPasswordStrength(password) {
   // Your code here
 
-  if (typeof password !== "string" || password.length == 0){
-    return "weak"
+  if (typeof password !== "string" || password.length == 0) {
+    return "weak";
   }
 
   let criteria = 0;
-  
+
   let hasUpper = false;
   let hasLower = false;
   let hasNumber = false;
   let hasSpecial = false;
-  
-  const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
-  
-  for(let char of password) {
-    if(char >= "A" && char <= "Z") hasUpper = true;
-    if(char >= "a" && char <= "z") hasLower = true;
-    if(char >= "0" && char <= "9") hasNumber = true;
-    if(specialChars.includes(char)) hasSpecial =true;
-  }
-  
-  
-    if(password.length >= 8) {
-      criteria++
-    }
-  if(hasLower) criteria++
-  if(hasUpper) criteria++
-  if(hasNumber) criteria++
-  if(hasSpecial) criteria++
 
-  if(criteria <= 1) return "weak"
-  if(criteria <= 3) return "medium"
-  if(criteria === 4) return "strong"
-  return "very strong"
+  const specialChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
+  for (let char of password) {
+    if (char >= "A" && char <= "Z") hasUpper = true;
+    if (char >= "a" && char <= "z") hasLower = true;
+    if (char >= "0" && char <= "9") hasNumber = true;
+    if (specialChars.includes(char)) hasSpecial = true;
+  }
+
+  if (password.length >= 8) {
+    criteria++;
+  }
+  if (hasLower) criteria++;
+  if (hasUpper) criteria++;
+  if (hasNumber) criteria++;
+  if (hasSpecial) criteria++;
+
+  if (criteria <= 1) return "weak";
+  if (criteria <= 3) return "medium";
+  if (criteria === 4) return "strong";
+  return "very strong";
 }

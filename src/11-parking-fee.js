@@ -39,7 +39,11 @@ export function calculateParkingFee(hours, vehicleType) {
   }
 
   // invalid vehicle type
-  if (vehicleType !== "car" && vehicleType !== "motorcycle" && vehicleType !== "bus") {
+  if (
+    vehicleType !== "car" &&
+    vehicleType !== "motorcycle" &&
+    vehicleType !== "bus"
+  ) {
     return -1;
   }
 
