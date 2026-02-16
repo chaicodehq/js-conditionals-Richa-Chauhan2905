@@ -23,6 +23,7 @@
  * @returns {number} The ticket price, or -1 for invalid input
  */
 export function getTicketPrice(age, isWeekend) {
+  
   // Your code here
   let price;
   if (age < 0 || Number.isNaN(age)) {

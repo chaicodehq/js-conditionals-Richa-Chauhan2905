@@ -25,6 +25,7 @@ export function getTrafficAction(color) {
   if (typeof color !== "string" || color.trim() === "") {
     return "INVALID SIGNAL";
   }
+  
   // Your code here
   switch (color.toLocaleLowerCase()) {
     case "green":
