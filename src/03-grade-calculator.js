@@ -24,6 +24,7 @@
  * @param {boolean} hasExtraCredit - Whether the student has extra credit
  * @returns {string} The letter grade or "INVALID"
  */
+
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
   if (score < 0 || Number.isNaN(score) || score > 100) {
